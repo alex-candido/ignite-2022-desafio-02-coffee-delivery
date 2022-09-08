@@ -14,10 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  border-style, input-security, textarea, button {
+  body, input, textarea, button {
     font-family: ${({ theme }) => theme.fonts.regular};
     font-weight: 400;
-    font-size: ${({ theme }) => theme.textSizes['text-regular-m']};
+    font-size: ${({ theme }) => theme.textSizes['text-regular-m']}
   }
 
   button {
