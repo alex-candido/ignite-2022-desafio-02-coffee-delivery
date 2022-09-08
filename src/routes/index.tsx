@@ -5,8 +5,10 @@ import HomePage from '../pages/Home';
 const Router: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/completeOrder" element={<CompleteOrderPage />} />
+      <Route path="/" element={<LayoutContainer />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/completeOrder" element={<CompleteOrderPage />} />
+      </Route>
     </Routes>
   );
 };
