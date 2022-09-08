@@ -18,6 +18,13 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.regular};
     font-weight: 400;
     font-size: ${({ theme }) => theme.textSizes['text-regular-m']};
+  }
 
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
