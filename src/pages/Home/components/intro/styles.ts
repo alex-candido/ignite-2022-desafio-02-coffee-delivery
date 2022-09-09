@@ -21,3 +21,5 @@ export const IntroContent = styled.div`
   justify-content: space-between;
   gap: 3.5rem;
 `;
+
+export const Int
