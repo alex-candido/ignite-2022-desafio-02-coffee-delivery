@@ -1,7 +1,13 @@
 import React from 'react';
+import Intro from './components/intro';
+import { HomeContainer } from './styles';
 
 const HomePage: React.FC = () => {
-  return <h1>Home</h1>;
+  return (
+    <HomeContainer>
+      <Intro />;
+    </HomeContainer>
+  );
 };
 
 export default HomePage;
