@@ -1,5 +1,6 @@
 import React from 'react';
 import { TitleText } from '../../../../components/Typography';
+import { coffees } from '../../../../data/coffees';
 import CoffeeCard from '../CoffeeCard';
 import { CoffeeList, OurCoffeesContainer } from './styles';
 
@@ -11,10 +12,9 @@ const OurCoffees: React.FC = () => {
       </TitleText>
 
       <CoffeeList>
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
+        {coffees.map(coffee => (
+          <CoffeeCard key={coffee.id} coffee={coffee} />
+        ))}
       </CoffeeList>
     </OurCoffeesContainer>
   );

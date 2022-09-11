@@ -8,10 +8,23 @@ import {
   CoffeeCardContainer,
   Description,
   Name,
-  Tags,
+  Tags
 } from './styles';
 
-const CoffeeCard: React.FC = () => {
+interface Coffee {
+  id: number;
+  tags: string[];
+  name: string;
+  description: string;
+  photo: string;
+  price: number;
+}
+
+interface CoffeeProps {
+  coffee: Coffee;
+}
+
+const CoffeeCard: React.FC<CoffeeProps> = ({ coffee }) => {
   return (
     <CoffeeCardContainer>
       <img
@@ -20,14 +33,13 @@ const CoffeeCard: React.FC = () => {
       />
 
       <Tags>
-        <span>tradicional</span>
-        <span>com leite</span>
+        {coffee.tags.map(tag => (
+          <span key={`${coffee.id}${tag}`}>{tag}</span>
+        ))}
       </Tags>
 
-      <Name>Expresso Tradicional</Name>
-      <Description>
-        O tradicional café feito com água quente e grãos moídos
-      </Description>
+      <Name>{coffee.name}</Name>
+      <Description>{coffee.description}</Description>
 
       <CardFooter>
         <div>
