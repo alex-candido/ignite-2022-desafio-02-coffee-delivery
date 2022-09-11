@@ -8,7 +8,7 @@ import {
   BenefitsContainer,
   IntroContainer,
   IntroContent,
-  IntroTitle
+  IntroTitle,
 } from './styles';
 
 const Intro: React.FC = () => {
