@@ -30,10 +30,7 @@ const CoffeeCard: React.FC<CoffeeProps> = ({ coffee }) => {
 
   return (
     <CoffeeCardContainer>
-      <img
-        src="https://s3-alpha-sig.figma.com/img/55b1/f9ee/64600f98b2bae456b96fdc624c4b4f47?Expires=1663545600&Signature=WXD~HQrDr1GTGmE51fhaLsukSc4WLrWH6DocHC8hE~KNmYg~JPbSUTkALvvw8JTs2UttqiLynTfChu9DnfG2~ljz6WlpnqIi8oLhb3TBbHxWhIG-rEuSDBRCX~OGfgVEtwE0Drj7iYlwu6Yfjj3UfYTAKClEGH0mirjUGygVFQBoxSUn~MIi0xuK6kmGMk~6Iqn214LVy71sXARudNPmE6BaSJMHVF~L0EyjqlIDkT7wjY94iX3q3uyQclx8iCTcxHyEpBMa9tAmdeZsXc48ZKM7MFe88pBtgToyFFc-qqjta2mWoC-BkU2-Hlquha7LJxyB-gKKYsRSUNRT7YfAOQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-        alt="cup"
-      />
+      <img src={`/coffees/${coffee.photo}`} alt={coffee.name} />
 
       <Tags>
         {coffee.tags.map(tag => (
