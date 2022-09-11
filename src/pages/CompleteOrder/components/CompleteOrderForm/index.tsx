@@ -1,4 +1,4 @@
-import { MapPinLine } from 'phosphor-react';
+import { CurrencyDollar, MapPinLine } from 'phosphor-react';
 import React from 'react';
 import { useTheme } from 'styled-components';
 import { TitleText } from '../../../../components/Typography';
@@ -23,6 +23,13 @@ const CompleteOrderForm: React.FC = () => {
         />
 
         <AddressForm />
+      </FormSectionContainer>
+      <FormSectionContainer>
+        <SectionTitle
+          title="Pagamento"
+          subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
+          icon={<CurrencyDollar color={colors['brand-purple']} size={22} />}
+        />
       </FormSectionContainer>
     </CompleteOrderFormContainer>
   );
