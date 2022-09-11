@@ -1,7 +1,13 @@
 import React from 'react';
+import CompleteOrderForm from './components/CompleteOrderForm';
+import { CompleteOrderContainer } from './styles';
 
 const CompleteOrderPage: React.FC = () => {
-  return <h1>Complete</h1>;
+  return (
+    <CompleteOrderContainer className="container">
+      <CompleteOrderForm />
+    </CompleteOrderContainer>
+  );
 };
 
 export default CompleteOrderPage;
