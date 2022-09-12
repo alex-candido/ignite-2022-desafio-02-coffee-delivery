@@ -1,5 +1,6 @@
 import React from 'react';
 import { TitleText } from '../../../../components/Typography';
+import CoffeeCartCard from '../CoffeeCartCard';
 import { DetailsContainer, SelectedCoffeesContainer } from './styled';
 
 const SelectedCoffees: React.FC = () => {
@@ -10,7 +11,9 @@ const SelectedCoffees: React.FC = () => {
       </TitleText>
 
       <DetailsContainer>
-        <p>itens</p>
+        <CoffeeCartCard />
+        <CoffeeCartCard />
+        <CoffeeCartCard />
       </DetailsContainer>
     </SelectedCoffeesContainer>
   );
