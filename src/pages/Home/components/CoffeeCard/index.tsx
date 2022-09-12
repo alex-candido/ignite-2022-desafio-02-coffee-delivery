@@ -2,6 +2,7 @@ import { ShoppingCart } from 'phosphor-react';
 import React from 'react';
 import QuantityInput from '../../../../components/QuantityInput';
 import { RegularText, TitleText } from '../../../../components/Typography';
+import { useCart } from '../../../../hooks/useCart';
 import { formatMoney } from '../../../../utils/formatMoney';
 import {
   AddCartWrapper,
@@ -26,6 +27,16 @@ interface CoffeeProps {
 }
 
 const CoffeeCard: React.FC<CoffeeProps> = ({ coffee }) => {
+  const { addCoffeeToCart } = useCart();
+
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      quantity: 1,
+    };
+    addCoffeeToCart(coffeeToAdd);
+  }
+
   const formattedPrice = formatMoney(coffee.price);
 
   return (
@@ -51,7 +62,7 @@ const CoffeeCard: React.FC<CoffeeProps> = ({ coffee }) => {
 
         <AddCartWrapper>
           <QuantityInput />
-          <button type="submit">
+          <button type="submit" onClick={handleAddToCart}>
             <ShoppingCart weight="fill" size={22} />
           </button>
         </AddCartWrapper>
