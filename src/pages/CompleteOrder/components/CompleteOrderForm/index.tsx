@@ -4,6 +4,7 @@ import { useTheme } from 'styled-components';
 import { TitleText } from '../../../../components/Typography';
 import SectionTitle from '../SectionTitle';
 import AddressForm from './AddressForm';
+import PaymentMethodOptions from './PaymentMethodOptions';
 import { CompleteOrderFormContainer, FormSectionContainer } from './styles';
 
 const CompleteOrderForm: React.FC = () => {
@@ -30,6 +31,8 @@ const CompleteOrderForm: React.FC = () => {
           subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
           icon={<CurrencyDollar color={colors['brand-purple']} size={22} />}
         />
+
+        <PaymentMethodOptions />
       </FormSectionContainer>
     </CompleteOrderFormContainer>
   );
