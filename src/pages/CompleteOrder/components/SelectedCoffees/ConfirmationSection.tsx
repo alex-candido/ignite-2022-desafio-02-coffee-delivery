@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../../../components/Button';
 import { RegularText } from '../../../../components/Typography';
 import { ConfirmationSectionContainer } from './styled';
 
@@ -21,6 +22,8 @@ const ConfirmationSection: React.FC = () => {
           R$ 33,20
         </RegularText>
       </div>
+
+      <Button text="Confirmar Pedido" />
     </ConfirmationSectionContainer>
   );
 };

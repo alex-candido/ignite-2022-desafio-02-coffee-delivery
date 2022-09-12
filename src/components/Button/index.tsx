@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
+import { ButtonContainer } from './styles';
 
-const Button: React.FC = () => {
-  return <div>Button</div>;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string | number;
+}
+
+const Button: React.FC<ButtonProps> = ({ text, ...props }) => {
+  return <ButtonContainer {...props}>{text}</ButtonContainer>;
 };
 
 export default Button;
