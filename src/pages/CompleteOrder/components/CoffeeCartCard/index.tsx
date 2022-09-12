@@ -19,7 +19,7 @@ const CoffeeCartCard: React.FC = () => {
         <div>
           <RegularText color="subtitle">Expresso Tradicional</RegularText>
           <ActionsContainer>
-            <QuantityInput />
+            <QuantityInput size="small" />
             <RemoveButton>
               <Trash size={16} />
               REMOVER
