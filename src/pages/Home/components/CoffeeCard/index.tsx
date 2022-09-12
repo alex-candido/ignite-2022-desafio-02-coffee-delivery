@@ -12,7 +12,7 @@ import {
   Tags,
 } from './styles';
 
-interface Coffee {
+export interface Coffee {
   id: number;
   tags: string[];
   name: string;
