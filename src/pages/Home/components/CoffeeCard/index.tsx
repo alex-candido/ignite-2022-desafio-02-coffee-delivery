@@ -27,12 +27,22 @@ interface CoffeeProps {
 }
 
 const CoffeeCard: React.FC<CoffeeProps> = ({ coffee }) => {
+  const [quantity, setQuantity] = React.useState(1);
+
+  function handleIncrease() {
+    setQuantity(state => state + 1);
+  }
+
+  function handleDecrease() {
+    setQuantity(state => state - 1);
+  }
+
   const { addCoffeeToCart } = useCart();
 
   function handleAddToCart() {
     const coffeeToAdd = {
       ...coffee,
-      quantity: 1,
+      quantity,
     };
     addCoffeeToCart(coffeeToAdd);
   }
@@ -61,7 +71,11 @@ const CoffeeCard: React.FC<CoffeeProps> = ({ coffee }) => {
         </div>
 
         <AddCartWrapper>
-          <QuantityInput />
+          <QuantityInput
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            quantity={quantity}
+          />
           <button type="submit" onClick={handleAddToCart}>
             <ShoppingCart weight="fill" size={22} />
           </button>

@@ -5,7 +5,7 @@ import { RegularText } from '../../../../components/Typography';
 import {
   ActionsContainer,
   CoffeeCartCardContainer,
-  RemoveButton,
+  RemoveButton
 } from './styles';
 
 const CoffeeCartCard: React.FC = () => {
@@ -19,7 +19,12 @@ const CoffeeCartCard: React.FC = () => {
         <div>
           <RegularText color="subtitle">Expresso Tradicional</RegularText>
           <ActionsContainer>
-            <QuantityInput size="small" />
+            <QuantityInput
+              onIncrease={handleIncrease}
+              onDecrease={handleDecrease}
+              quantity={coffee.quantity}
+              size="small"
+            />
             <RemoveButton>
               <Trash size={16} />
               REMOVER

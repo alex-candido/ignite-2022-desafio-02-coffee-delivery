@@ -8,6 +8,8 @@ export interface CartItem extends Coffee {
 
 interface CartContextType {
   cartItems: CartItem[];
+  cartQuantity: number;
+  addCoffeeToCart: (coffee: CartItem) => void;
 }
 
 interface CartContextProviderProps {
@@ -19,7 +21,9 @@ export const CartContext = createContext({} as CartContextType);
 export const CartContextProvider: React.FC<CartContextProviderProps> = ({
   children,
 }) => {
-  const [cartItems, setCartItems] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState<CartItem[]>([]);
+
+  const cartQuantity = cartItems.length;
 
   function addCoffeeToCart(coffee: CartItem) {
     const coffeeAlreadyExistsInCart = cartItems.findIndex(
@@ -38,7 +42,7 @@ export const CartContextProvider: React.FC<CartContextProviderProps> = ({
   }
 
   return (
-    <CartContext.Provider value={{ cartItems, addCoffeeToCart }}>
+    <CartContext.Provider value={{ cartItems, cartQuantity, addCoffeeToCart }}>
       {children}
     </CartContext.Provider>
   );
