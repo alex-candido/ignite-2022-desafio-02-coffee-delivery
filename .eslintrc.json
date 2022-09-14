@@ -27,6 +27,7 @@
   ],
   "rules": {
       // "prettier/prettier":  "off",
+      "no-param-reassign": "off",
       "react/jsx-no-constructed-context-values": "off",
       "react/require-default-props": "off",
       "import/no-unresolved": "error",

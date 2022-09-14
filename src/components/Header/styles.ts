@@ -60,9 +60,13 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
 
   font-size: ${({ theme }) => theme.textSizes['text-regular-s']};
 
-  ${({ variant, theme }) => css`
-    background: ${theme.colors[`brand-${variant}-light`]};
-    color: ${theme.colors[`brand-${variant}-dark`]};
+  ${({ variant }) => css`
+    background: ${({ theme }) => theme.colors[`brand-${variant}-light`]};
+    color: ${({ theme }) => theme.colors[`brand-${variant}-dark`]};
+
+    span {
+      background: ${({ theme }) => theme.colors[`brand-${variant}-dark`]};
+    }
   `}
 
   ${({ variant, theme }) =>
