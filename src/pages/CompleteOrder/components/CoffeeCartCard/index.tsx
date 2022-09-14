@@ -16,7 +16,7 @@ interface CoffeeCartCardProps {
 }
 
 const CoffeeCartCard: React.FC<CoffeeCartCardProps> = ({ coffee }) => {
-  const { changeCartItemQuantity } = useCart();
+  const { changeCartItemQuantity, removeCartItem } = useCart();
 
   function handleIncrease() {
     changeCartItemQuantity(coffee.id, 'increase');
@@ -24,6 +24,10 @@ const CoffeeCartCard: React.FC<CoffeeCartCardProps> = ({ coffee }) => {
 
   function handleDecrease() {
     changeCartItemQuantity(coffee.id, 'decrease');
+  }
+
+  function handleRemove() {
+    removeCartItem(coffee.id);
   }
 
   const coffeeTotal = coffee.price * coffee.quantity;
@@ -43,7 +47,7 @@ const CoffeeCartCard: React.FC<CoffeeCartCardProps> = ({ coffee }) => {
               onDecrease={handleDecrease}
               quantity={coffee.quantity}
             />
-            <RemoveButton>
+            <RemoveButton type="button" onClick={handleRemove}>
               <Trash size={16} />
               REMOVER
             </RemoveButton>
