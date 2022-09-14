@@ -26,6 +26,8 @@
       "prettier"
   ],
   "rules": {
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
       // "prettier/prettier":  "off",
       // "no-param-reassign": "off",
       "react/jsx-no-constructed-context-values": "off",
@@ -77,4 +79,5 @@
         "typescript": {}
       }
   }
+  
 }
