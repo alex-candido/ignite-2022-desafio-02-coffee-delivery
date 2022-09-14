@@ -1,10 +1,9 @@
-import { InputHTMLAttributes } from 'react';
+import { forwardRef, InputHTMLAttributes } from 'react';
 import { InputStyleContainer } from './styles';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
-const Input: React.FC<InputProps> = ({ ...props }) => {
-  return <InputStyleContainer {...props} />;
-};
-
+const Input = forwardRef<HTMLInputElement, InputProps>(({ ...props }, ref) => {
+  return <InputStyleContainer {...props} ref={ref} />;
+});
 export default Input;
