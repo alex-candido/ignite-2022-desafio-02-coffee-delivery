@@ -3,11 +3,12 @@ import React from 'react';
 import QuantityInput from '../../../../components/QuantityInput';
 import { RegularText } from '../../../../components/Typography';
 import { CartItem } from '../../../../contexts/CartContext';
+import { useCart } from '../../../../hooks/useCart';
 import { formatMoney } from '../../../../utils/formatMoney';
 import {
   ActionsContainer,
   CoffeeCartCardContainer,
-  RemoveButton
+  RemoveButton,
 } from './styles';
 
 interface CoffeeCartCardProps {
@@ -15,6 +16,16 @@ interface CoffeeCartCardProps {
 }
 
 const CoffeeCartCard: React.FC<CoffeeCartCardProps> = ({ coffee }) => {
+  const { changeCartItemQuantity } = useCart();
+
+  function handleIncrease() {
+    changeCartItemQuantity(coffee.id, 'increase');
+  }
+
+  function handleDecrease() {
+    changeCartItemQuantity(coffee.id, 'decrease');
+  }
+
   const coffeeTotal = coffee.price * coffee.quantity;
 
   const formattedPrice = formatMoney(coffeeTotal);
@@ -26,7 +37,12 @@ const CoffeeCartCard: React.FC<CoffeeCartCardProps> = ({ coffee }) => {
         <div>
           <RegularText color="subtitle">{coffee.name}</RegularText>
           <ActionsContainer>
-            <QuantityInput size="small" quantity={coffee.quantity} />
+            <QuantityInput
+              size="small"
+              onIncrease={handleIncrease}
+              onDecrease={handleDecrease}
+              quantity={coffee.quantity}
+            />
             <RemoveButton>
               <Trash size={16} />
               REMOVER

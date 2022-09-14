@@ -35,10 +35,11 @@ export const CartContextProvider: React.FC<CartContextProviderProps> = ({
     );
 
     const newCart = produce(cartItems, draft => {
+      const draftCartItems = draft;
       if (coffeeAlreadyExistsInCart < 0) {
-        draft.push(coffee);
+        draftCartItems.push(coffee);
       } else {
-        draft[coffeeAlreadyExistsInCart].quantity += coffee.quantity;
+        draftCartItems[coffeeAlreadyExistsInCart].quantity += coffee.quantity;
       }
     });
 
@@ -50,13 +51,14 @@ export const CartContextProvider: React.FC<CartContextProviderProps> = ({
     type: 'increase' | 'decrease',
   ) {
     const newCart = produce(cartItems, draft => {
+      const draftCartItems = draft;
       const coffeeExistsInCart = cartItems.findIndex(
         cartItem => cartItem.id === cartItemId,
       );
 
       if (coffeeExistsInCart >= 0) {
-        const item = draft[coffeeExistsInCart];
-        draft[coffeeExistsInCart].quantity =
+        const item = draftCartItems[coffeeExistsInCart];
+        draftCartItems[coffeeExistsInCart].quantity =
           type === 'increase' ? item.quantity + 1 : item.quantity - 1;
       }
     });
