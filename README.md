@@ -4,7 +4,7 @@
 
 Coffee Delivery é uma aplicação web de cafeteria delivery, tendo como aplicabilidade ser um gerenciador de carrinho de compras, suas funcionalidade são, listagem de produtos (cafés) disponíveis para compras, adicionar uma quantidade específicas de itens no carrinho, aumentar ou remover a quantidade de itens no carrinho, formulário para o usuário preencher o seu endereço, exibir o total de itens no carrinho no Header, exibir o valor total da soma de itens no carrinho multiplicados pelo valor
 
-Suas abordagens envolve padronização de projetos React, CSS modules, Componetização, Typescript, além de Ferramentas como ESLint, Prettier e EditorConfig. Acesse [Coffee Delivery](https://coffee-delivery-challenge-02.netlify.app/).
+Suas abordagens envolve padronização de projetos React, Styled Components, Componetização, Typescript, além de Ferramentas como ESLint, Prettier e EditorConfig. Acesse [Coffee Delivery](https://coffee-delivery-challenge-02.netlify.app/).
 
 ## 🚀 Abordagens
 
