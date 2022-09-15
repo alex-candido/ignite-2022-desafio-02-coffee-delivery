@@ -3,12 +3,10 @@ import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as zod from 'zod';
+import { useCart } from '../../hooks/useCart';
 import CompleteOrderForm from './components/CompleteOrderForm';
 import SelectedCoffees from './components/SelectedCoffees';
 import { CompleteOrderContainer } from './styles';
-// import { useNavigate } from "react-router-dom";
-// import { useCart } from "../../hooks/useCart";
-// import { TypeOf } from 'zod';
 
 enum PaymentMethods {
   credit = 'credit',
@@ -43,11 +41,13 @@ const CompleteOrderPage: React.FC = () => {
   const { handleSubmit } = confirmOrderForm;
 
   const navigate = useNavigate();
+  const { cleanCart } = useCart();
 
   function handleConfirmOrder(data: ConfirmOrderFormData) {
     navigate('/orderConfirmed', {
       state: data,
     });
+    cleanCart();
   }
 
   return (
